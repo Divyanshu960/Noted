@@ -15,14 +15,16 @@ const app = express();
 const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./utilities");
 
-app.use (express.json());
+
 
 app.use(cors({
     origin: process.env.NODE_ENV === "production"
-      ? ["https://noted-phi-rust.vercel.app/"]
+      ? ["https://noted-phi-rust.vercel.app"]
       : "http://localhost:5173",
     credentials: true,
   }));
+
+  app.use (express.json());
 
 app.get("/", (req, res) =>{
     res. json({ data: "hello" });
