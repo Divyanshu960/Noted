@@ -5,9 +5,7 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp"
 import { Analytics } from '@vercel/analytics/react';
 
-const routes = (
-  <div>
-    <Analytics />
+const routes = (  
   <Router>
     <Routes>
       <Route path="/" exact element={<Home/>}/>
@@ -15,8 +13,6 @@ const routes = (
       <Route path="/signup" exact element={<SignUp />}/>
     </Routes>
   </Router>
-  </div>
-  
 )
 
 
@@ -24,6 +20,7 @@ const App = () => {
   return (
     <div>
       {routes}
+      <Analytics />
     </div>
   )
 }
