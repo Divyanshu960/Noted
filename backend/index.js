@@ -18,8 +18,11 @@ const { authenticateToken } = require("./utilities");
 app.use (express.json());
 app.use(
     cors({
-        origin: "*",
+        origin: "https://noted-phi-rust.vercel.app/",
     })
+    // cors({
+    //     origin: "*",
+    // })
 );
 app.get("/", (req, res) =>{
     res. json({ data: "hello" });
