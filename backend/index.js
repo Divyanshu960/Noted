@@ -14,9 +14,13 @@ const Note = require("./models/note.model")
 const app = express();
 
 // 🛠️ Connect using env variable
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch((err) => console.error('❌ MongoDB Connection Failed:', err.message));
+// Make sure you're passing the environment variable to mongoose.connect()
+mongoose.connect(process.env.MONGO_URI, {
+  }).then(() => {
+    console.log("MongoDB connection successful");
+  }).catch((error) => {
+    console.error("MongoDB Connection Failed:", error);
+  });
 
 
 // app.use(cors({
