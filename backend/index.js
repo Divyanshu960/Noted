@@ -1,20 +1,22 @@
 require("dotenv").config();
 
-const config = require("./config.json");
+// const config = require("./config.json");
 const mongoose =require("mongoose");
+const express = require("express");
+const cors = require("cors");
+const jwt = require("jsonwebtoken");
 
-mongoose.connect(config.connectionString);
+const { authenticateToken } = require("./utilities");
 
 const User = require("./models/user.model")
 const Note = require("./models/note.model")
 
-const express = require("express");
-const cors = require("cors");
 const app = express();
 
-const jwt = require("jsonwebtoken");
-const { authenticateToken } = require("./utilities");
-
+// 🛠️ Connect using env variable
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch((err) => console.error('❌ MongoDB Connection Failed:', err.message));
 
 
 // app.use(cors({
