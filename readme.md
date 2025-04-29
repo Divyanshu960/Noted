@@ -1,5 +1,5 @@
 ## NOTED APP
-
+-by divyanshu
 # LogIn Page
 ![image](https://github.com/user-attachments/assets/665a540e-4a99-4446-b479-e2dee581de18)
 
