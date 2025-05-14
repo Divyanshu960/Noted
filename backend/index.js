@@ -12,8 +12,8 @@ const User = require("./models/user.model")
 const Note = require("./models/note.model")
 
 const app = express();
-console.log("Mongo URI:", process.env.MONGO_URI);  // Add this to see the value
-console.log("PORT", process.env.PORT);  // Add this to see the value
+// console.log("Mongo URI:", process.env.MONGO_URI);  // Add this to see the value
+// console.log("PORT", process.env.PORT);  // Add this to see the value
 
 // 🛠️ Connect using env variable
 // Make sure you're passing the environment variable to mongoose.connect()
